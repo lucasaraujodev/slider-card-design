@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Alpine slider</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1 class="title">FreeWebsiteCode - Alpine Slider</h1>
+<div class="slider" x-data="{start: true, end: false}">
+  <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-1.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+    
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-2.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-3.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-4.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-5.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-6.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-7.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-8.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-9.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-10.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+
+    <div class="slider__item">
+      <img class="slider__image" src="./img/photo-11.avif" alt="Image">
+      <div class="slider__info">
+        <h2>This is a card</h2>
+      </div>
+    </div>
+    
+  </div>
+  <div class="slider__nav">
+    <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previous</button>
+    <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});" x-bind:class="end ? '' : 'slider__nav__button--active'">Next</button>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
